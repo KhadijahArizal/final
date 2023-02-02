@@ -18,6 +18,7 @@ class _LocationState extends State<Location> {
         margin: const EdgeInsets.only(top: 10, left: 10, right: 10),
         padding: const EdgeInsets.only(top: 10, left: 10, right: 10),
         child: Center(
+          child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.center,
@@ -32,7 +33,7 @@ class _LocationState extends State<Location> {
             ],
           ),
         ),
-      );
+      ));
 
  Widget storeLocation(
           {required IconData icon, Color? color, required String title}) =>
@@ -107,12 +108,17 @@ class _LocationState extends State<Location> {
                       fontSize: 13,
                       color: Colors.black,
                       fontWeight: FontWeight.w400)),
-              const SizedBox(height: 25),
+              const SizedBox(height: 55),
               storeLocation(
                   icon: FontAwesomeIcons.mapLocation,
                   color: Colors.black,
                   title:
-                      'Universiti Islam Antarabangsa Malaysia Gombak, 53100, Selangor'),
+                      'Universiti Islam Antarabangsa Malaysia'),
+              storeLocation(
+                  icon: FontAwesomeIcons.mapLocation,
+                  color: Colors.black,
+                  title:
+                      'Gombak, 53100, Selangor'),
               storeLocation(
                   icon: FontAwesomeIcons.mapPin,
                   color: Colors.white,
@@ -132,8 +138,8 @@ class _LocationState extends State<Location> {
                     children: [
                       Ink.image(
                         image: const AssetImage('assets/dinoMap.jpeg'),
-                        height: 300,
-                        width: 450,
+                        height: 150,
+                        width: 550,
                         fit: BoxFit.cover,
                       ),
                       const SizedBox(height: 6),
