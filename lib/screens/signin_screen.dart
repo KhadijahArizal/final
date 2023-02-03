@@ -47,7 +47,7 @@ class _SignInScreenState extends State<SignInScreen> {
           ),
         ),
           child: SingleChildScrollView(child: Padding(padding: EdgeInsets.fromLTRB(
-            20,MediaQuery.of(context).size.height * 0.1, 20, 120),
+            20,MediaQuery.of(context).size.height * 0.1, 20, 140),
           child: Column(
             children:<Widget> [
               Image.asset("assets/logo.png"),

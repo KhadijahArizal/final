@@ -41,6 +41,8 @@ dependencies:
   cloud_firestore: ^4.3.1
   font_awesome_flutter: ^10.3.0
   url_launcher: ^6.1.8
+  file_picker: ^5.2.5
+  firebase_storage: ^11.0.10
   
   
 
@@ -77,6 +79,7 @@ flutter:
   - card.png
   - qrcode.png
   - setting.png
+  - dinoMap.jpeg
   
 
   # An image asset can refer to one or more resolution-specific "variants", see

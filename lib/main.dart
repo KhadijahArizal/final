@@ -5,7 +5,6 @@ import 'package:dino_printing/screens/contactUs_screen.dart';
 import 'package:dino_printing/screens/home_screen.dart';
 import 'package:dino_printing/screens/location_screen.dart';
 import 'package:dino_printing/screens/orderdetail_screen.dart';
-
 import 'package:dino_printing/screens/orderform_screen.dart';
 import 'package:dino_printing/screens/payment_screen.dart';
 import 'package:dino_printing/screens/profile_screen.dart';
@@ -59,7 +58,7 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
 
   PageController pageController=PageController();
-  List<Widget>pages=[HomeScreen(),UserProfile()];
+  List<Widget>pages=[const HomeScreen(),const UserProfile()];
 
   int selectIndex=0;
   void onPageChanged(int index){

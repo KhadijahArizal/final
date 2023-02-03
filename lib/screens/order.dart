@@ -9,7 +9,7 @@ class Orders {
   dynamic quantity;
   dynamic color;
   dynamic time;
-  dynamic address;
+  dynamic mahallah;
 
 
   Orders(
@@ -19,5 +19,5 @@ class Orders {
       required this.quantity,
       required this.color,
       required this.time,
-      required this.address});
+      required this.mahallah});
 }

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:dino_printing/router/routes.dart';
 
 import 'contactUs_screen.dart';
 
@@ -15,10 +16,10 @@ class Location extends StatefulWidget {
 
 class _LocationState extends State<Location> {
   Widget title({required String text}) => Container(
-        margin: const EdgeInsets.only(top: 10, left: 10, right: 10),
-        padding: const EdgeInsets.only(top: 10, left: 10, right: 10),
-        child: Center(
-          child: SingleChildScrollView(
+      margin: const EdgeInsets.only(top: 10, left: 10, right: 10),
+      padding: const EdgeInsets.only(top: 10, left: 10, right: 10),
+      child: Center(
+        child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.center,
@@ -35,7 +36,7 @@ class _LocationState extends State<Location> {
         ),
       ));
 
- Widget storeLocation(
+  Widget storeLocation(
           {required IconData icon, Color? color, required String title}) =>
       Row(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -81,7 +82,7 @@ class _LocationState extends State<Location> {
       ),
       body: Container(
         margin: const EdgeInsets.only(bottom: 10),
-        height: 600,
+        height: 700,
         width: double.infinity,
         decoration: const BoxDecoration(
             color: Colors.white,
@@ -89,74 +90,61 @@ class _LocationState extends State<Location> {
               bottomLeft: Radius.circular(30),
               bottomRight: Radius.circular(30),
             )),
-        child: GridView.count(
-          crossAxisCount: 1,
-          crossAxisSpacing: 1,
-          mainAxisSpacing: 1,
-          childAspectRatio: 1,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-              const SizedBox(height: 25),
-              const Text('Dino Printing',
-                  style: TextStyle(
-                      fontSize: 20,
-                      color: Colors.black,
-                      /*letterSpacing: 1,*/
-                      fontWeight: FontWeight.w600)),
-              const Text('Printing Shop',
-                  style: TextStyle(
-                      fontSize: 13,
-                      color: Colors.black,
-                      fontWeight: FontWeight.w400)),
-              const SizedBox(height: 55),
-              storeLocation(
-                  icon: FontAwesomeIcons.mapLocation,
+          const SizedBox(height: 25),
+          const Text('Dino Printing',
+              style: TextStyle(
+                  fontSize: 20,
                   color: Colors.black,
-                  title:
-                      'Universiti Islam Antarabangsa Malaysia'),
-              storeLocation(
-                  icon: FontAwesomeIcons.mapLocation,
+                  fontWeight: FontWeight.w600)),
+          const Text('Printing Shop',
+              style: TextStyle(
+                  fontSize: 13,
                   color: Colors.black,
-                  title:
-                      'Gombak, 53100, Selangor'),
-              storeLocation(
-                  icon: FontAwesomeIcons.mapPin,
-                  color: Colors.white,
-                  title:
-                      '7P2M+CH Ampang Jaya, Selangor'),
-              const SizedBox(height: 25),
-              Material(
-                color: Colors.indigo,
-                elevation: 8,
-                borderRadius: BorderRadius.circular(25),
-                clipBehavior: Clip.antiAliasWithSaveLayer,
-                child: InkWell(
-                  splashColor: Colors.black26,
-                  onTap: () => share(SocialMedia.maps),
-                  child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Ink.image(
-                        image: const AssetImage('assets/dinoMap.jpeg'),
-                        height: 150,
-                        width: 550,
-                        fit: BoxFit.cover,
-                      ),
-                      const SizedBox(height: 6),
-                      const Text('Location',
-                          style: TextStyle(
-                            fontSize: 30,
-                            color: Colors.white,
-                          )),
-                      const SizedBox(height: 6)
-                    ],
+                  fontWeight: FontWeight.w400)),
+          const SizedBox(height: 55),
+          storeLocation(
+              icon: FontAwesomeIcons.mapLocation,
+              color: Colors.black,
+              title:
+                  'Universiti Islam Antarabangsa Malaysia,\n              Gombak, 53100, Selangor', ),
+          storeLocation(
+              icon: FontAwesomeIcons.mapPin,
+              color: Colors.white,
+              title: '7P2M+CH Ampang Jaya, Selangor'),
+          const SizedBox(height: 25),
+          Material(
+            color: Colors.indigo,
+            elevation: 8,
+            borderRadius: BorderRadius.circular(25),
+            clipBehavior: Clip.antiAliasWithSaveLayer,
+            child: InkWell(
+              splashColor: Colors.black26,
+              onTap: () => share(SocialMedia.maps),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Ink.image(
+                    image: const AssetImage('assets/dinoMap.jpeg'),
+                    height: 200,
+                    width: 300,
+                    fit: BoxFit.cover,
                   ),
-                ),
-              )
-            ]),
-          ],
-        ),
+                  const SizedBox(height: 6),
+                  const Text('Location',
+                      style: TextStyle(
+                        fontSize: 20,
+                        color: Colors.white,
+                      )),
+                  const SizedBox(height: 3)
+                ],
+              ),
+            ),
+          ),
+        ]),
       ),
     );
   }
-  }
+}
